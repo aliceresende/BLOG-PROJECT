@@ -9,7 +9,7 @@ import TopBar from "./topbar/TopBar";
 
 function App() {
 
-  const [activeSection, setActiveSection] = useState('home');
+  const [, setActiveSection] = useState('home');
 
   const handleScroll = () => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];

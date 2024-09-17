@@ -1,4 +1,3 @@
-import ReactCardSlider from 'react-card-slider-component'; // Import ReactCardSlider
 import "./projects.css";
 import React, { useState } from "react";
 
