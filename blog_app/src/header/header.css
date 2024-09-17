@@ -1,0 +1,38 @@
+.header {
+    margin-top: 0px;
+}
+
+.headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+.headerTilesSm {
+    padding-left: 20%;
+    position: absolute;
+    top: 48%;
+    font-size: 25px;
+    z-index: 2;
+}
+
+.headerTitleLg {
+    padding-left: 8%;
+    position: absolute;
+    top: 54%;
+    font-size: 50px;
+    z-index: 2;
+}
+
+.headerImg {
+    background-image: url('../assets/headerImg.png');
+    background-size: cover;
+    background-position: center; 
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+
+
+}

@@ -1,0 +1,4 @@
+.home{
+display: block; /* Block layout ensures vertical stacking */
+  width: 100%;
+}

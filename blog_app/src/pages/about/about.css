@@ -1,0 +1,48 @@
+.about{
+    display: flex;           /* Flexbox to align items side by side */
+    justify-content: space-between;  /* Space between the text and image */
+    margin-top: 30px;
+}
+
+.aboutTitle{
+    display: flex;
+    align-items: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    color: #0c349c;
+    border-top:3px solid #0c349c;
+    border-bottom:3px solid #0c349c;
+    padding-top: 10px;  
+    padding-bottom: 10px;  /* Add padding below the content */
+    position: absolute;
+    width: 45%;
+}
+
+.textSection{
+   padding-left: 5%; 
+   width: 45%;
+}
+
+.intro{
+    padding-top: 12%;
+    align-items:stretch;
+    line-height: 2;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.imgSection{
+    width:40%;
+    padding-right: 5%;
+}
+
+
+.meImg {
+    background-image: url('/src/assets/meImg.jpg');
+    background-size: cover;
+    background-position: center; 
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 12px;
+
+}

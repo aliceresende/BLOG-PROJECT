@@ -1,0 +1,84 @@
+.skills{
+    /* Flexbox to align items side by side */
+    margin-top: 20px;
+    background-color: #f8a01a;
+    height: 420px;
+    width: 100%
+
+}
+
+.skillTitle{
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    color: #ffffff;
+    border-top:3px solid #ffffff;
+    border-bottom:3px solid #ffffff;
+    padding-top: 10px;  
+    padding-bottom: 10px;  /* Add padding below the content */
+    position: relative;
+}
+
+.skillsSection{
+   padding-left: 5%; 
+   width: 90%;
+   padding-top: 20px;
+   padding-right: 5%;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 30px; /* Space between logo grid and card */
+  }
+  
+
+/* Grid container for the logos */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px; /* Space between circles */
+    justify-items: center; /* Center items in their grid cells */
+    align-items: center; /* Vertically center items */
+    margin: 4px 0px;
+    width: 40%;
+  }
+  
+  /* Circle container */
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+  }
+  
+  /* Image inside the circle */
+  .logo-img {
+    width: 58%; /* Adjust the size of the logo inside the circle */
+    height: auto; /* Maintain aspect ratio */
+
+  }
+
+ /* Card next to the logo grid */
+.cardSkill {
+    width: 60%; /* Adjust size of the card */
+    height: 288px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff; /* Add a border */
+    display: flex;
+    padding: 8px 18px;
+    justify-content: center;
+    align-items: center;
+    align-items:stretch;
+    line-height: 2;
+    font-size: 16px;
+    border-radius: 12px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
