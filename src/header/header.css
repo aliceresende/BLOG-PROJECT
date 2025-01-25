@@ -1,38 +1,74 @@
 .header {
-    margin-top: 0px;
+    margin-top: 0;
+    position: relative;
+    height: 100vh; /* Garante que o header ocupe sempre a altura da tela */
+    width: 100%;
+    overflow: hidden; /* Evita que o conteúdo transborde */
 }
 
 .headerTitles {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 10%; /* Alinha o texto à esquerda */
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    align-items: left;
+    text-align: left; /* Texto alinhado à esquerda */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #ffffff;
+    z-index: 2; /* Mantém o texto acima da imagem */
 }
 
 .headerTilesSm {
-    padding-left: 20%;
-    position: absolute;
-    top: 48%;
-    font-size: 25px;
-    z-index: 2;
+    font-size: 25px; /* Tamanho do texto menor */
+    margin-bottom: 10px; /* Espaço entre o título pequeno e o grande */
 }
 
 .headerTitleLg {
-    padding-left: 8%;
-    position: absolute;
-    top: 54%;
-    font-size: 50px;
-    z-index: 2;
+    font-size: 50px; /* Tamanho do texto maior */
 }
 
 .headerImg {
-    background-image: url('../assets/headerImg.png');
-    background-size: cover;
-    background-position: center; 
-    height: 80vh;
-    width: 100%;
-    object-fit: cover;
+    background-image: url('../assets/headerImg-transformed.png');
+    background-size: cover; /* Garante que a imagem ocupe toda a área */
+    background-position: right center; /* Foca no lado direito da imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    height: 100%; /* Ocupa toda a altura do header */
+    width: 100%; /* Ocupa toda a largura */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Mantém a imagem no fundo */
+}
 
+/* Responsividade para tablets (≤768px) */
+@media (max-width: 768px) {
+    .headerTitles {
+        left: 5%; /* Ajusta a margem para telas menores */
+        text-align: center; /* Centraliza o texto */
+    }
 
+    .headerTilesSm {
+        font-size: 20px; /* Reduz o tamanho do texto menor */
+    }
+
+    .headerTitleLg {
+        font-size: 40px; /* Reduz o tamanho do texto maior */
+    }
+}
+
+/* Responsividade para telemóveis (≤480px) */
+@media (max-width: 480px) {
+    .headerTitles {
+        left: 5%; /* Garante boa margem para dispositivos menores */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .headerTilesSm {
+        font-size: 18px; /* Ajuste para ecrãs menores */
+    }
+
+    .headerTitleLg {
+        font-size: 30px; /* Ajuste para ecrãs menores */
+    }
 }
