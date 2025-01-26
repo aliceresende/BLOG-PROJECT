@@ -1,74 +1,149 @@
 .header {
     margin-top: 0;
     position: relative;
-    height: 100vh; /* Garante que o header ocupe sempre a altura da tela */
+    height: 91vh; /* Garante que o header ocupe sempre a altura da tela */
     width: 100%;
     overflow: hidden; /* Evita que o conteúdo transborde */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente os elementos */
+    justify-content: space-between; /* Afasta os títulos e a imagem horizontalmente */
 }
 
 .headerTitles {
-    position: absolute;
-    top: 50%; /* Centraliza verticalmente */
-    left: 10%; /* Alinha o texto à esquerda */
-    transform: translateY(-50%);
+    position: relative;
+    padding-left: 5%; /* Melhor margem para textos */
     display: flex;
     flex-direction: column;
-    text-align: left; /* Texto alinhado à esquerda */
+    text-align: left;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #ffffff;
-    z-index: 2; /* Mantém o texto acima da imagem */
+    z-index: 2;
 }
 
 .headerTilesSm {
-    font-size: 25px; /* Tamanho do texto menor */
+    font-size: 40px; /* Tamanho do texto menor */
     margin-bottom: 10px; /* Espaço entre o título pequeno e o grande */
 }
 
-.headerTitleLg {
-    font-size: 50px; /* Tamanho do texto maior */
-}
-
-.headerImg {
-    background-image: url('../assets/headerImg-transformed.png');
-    background-size: cover; /* Garante que a imagem ocupe toda a área */
-    background-position: right center; /* Foca no lado direito da imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    height: 100%; /* Ocupa toda a altura do header */
-    width: 100%; /* Ocupa toda a largura */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Mantém a imagem no fundo */
+.headerIcon {
+    flex-shrink: 0; /* Garante que o contêiner não encolha */
+    width: 40%; /* Define largura inicial */
+    height: 100%; /* Define altura proporcional */
+    background-image: url('../assets/novo.png'); /* Verifique o caminho da imagem */
+    background-size: contain; /* Ajusta a imagem dentro do contêiner */
+    background-position: center right; /* Posiciona à direita */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    margin-right: 3%;
+    z-index: 3; /* Garante que esteja acima de outros elementos */
+    border: 2px ; /* Adicionado para depuração */
 }
 
 /* Responsividade para tablets (≤768px) */
 @media (max-width: 768px) {
-    .headerTitles {
-        left: 5%; /* Ajusta a margem para telas menores */
-        text-align: center; /* Centraliza o texto */
-    }
-
-    .headerTilesSm {
-        font-size: 20px; /* Reduz o tamanho do texto menor */
-    }
-
-    .headerTitleLg {
-        font-size: 40px; /* Reduz o tamanho do texto maior */
+    .headerIcon {
+        width: 60%; /* Ajusta largura para tablets */
+        height: auto; /* Altura proporcional */
+        margin: 0 auto; /* Centraliza a imagem */
     }
 }
 
 /* Responsividade para telemóveis (≤480px) */
 @media (max-width: 480px) {
+    .headerIcon {
+        width: 80%; /* Maior largura para telas pequenas */
+        height: auto; /* Proporção automática */
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+}
+
+
+.headerTitleLg {
+    font-size: 55px; /* Tamanho do texto maior */
+    overflow: hidden; /* Garante que o texto não ultrapasse os limites */
+    white-space: nowrap; /* Evita quebra de linha no texto */
+    border-right: 3px solid #ffffff; /* Simula o cursor da digitação */
+    animation: typing 4s steps(22, end), blink 0.5s step-end infinite; /* Animação de digitação e cursor piscando */
+    animation-iteration-count: infinite; /* Repetição infinita */
+    animation-delay: 0s; /* Sem atraso inicial */
+    animation-direction: normal; /* Continua no sentido de digitação */
+}
+
+/* Keyframes para o efeito de digitação */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    80% {
+        width: 100%; /* Conclui a digitação */
+    }
+    100% {
+        width: 0; /* Reseta o texto para recomeçar */
+    }
+}
+/* Keyframes para o efeito de piscar do cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Deixa o cursor invisível no meio do piscar */
+    }
+}
+
+
+.headerImg {
+    background-image: url('../assets/background_header.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Responsividade para tablets (≤768px) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Alinha elementos em coluna */
+        justify-content: center;
+    }
+
+    .headerIcon {
+        max-width: 60%; /* Reduz a largura da imagem */
+        height: 50%; /* Ajusta altura */
+    }
+
     .headerTitles {
-        left: 5%; /* Garante boa margem para dispositivos menores */
-        text-align: center; /* Centraliza o texto */
+        padding-left: 0;
+        text-align: center;
     }
 
     .headerTilesSm {
-        font-size: 18px; /* Ajuste para ecrãs menores */
+        font-size: 20px;
     }
 
     .headerTitleLg {
-        font-size: 30px; /* Ajuste para ecrãs menores */
+        font-size: 40px;
+    }
+}
+
+/* Responsividade para telemóveis (≤480px) */
+@media (max-width: 480px) {
+    .headerIcon {
+        max-width: 80%; /* Adapta a imagem para telas pequenas */
+        height: 40%; /* Reduz altura */
+        margin-right: 0; /* Remove margem desnecessária */
+    }
+
+    .headerTitles {
+        text-align: center;
+    }
+
+    .headerTilesSm {
+        font-size: 18px;
+    }
+
+    .headerTitleLg {
+        font-size: 30px;
     }
 }
